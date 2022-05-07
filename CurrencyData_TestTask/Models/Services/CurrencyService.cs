@@ -10,6 +10,9 @@ namespace CurrencyData.Models.Services
 
         public async Task<CurrencyInfo> GetDataFromJsonAsync()
         {
+            if (url == null)
+                throw new ArgumentNullException("url");
+
             using var httpClient = new HttpClient();
             var result = await httpClient.GetStringAsync(url);
             var data = JsonConvert.DeserializeObject<CurrencyInfo>(result);

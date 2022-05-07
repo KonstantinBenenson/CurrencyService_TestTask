@@ -25,7 +25,7 @@
                     </th>
                 </tr>
             </thead>
-            @if (Model.Valute.Count == 0)
+            @if (Model.Valute.Values.Count == 0)
                 {
                 <h3>No information to be displayed.</h3>
             }
@@ -55,8 +55,9 @@
             </tbody>
             }
             else{
-            <tbody>     
-                <h3 class="">On date @Model.Date (@Model.Date.DayOfWeek)</h3> 
+                <h3>On date @Model.Date (@Model.Date.DayOfWeek)</h3> 
+                <br />
+            <tbody>                
                 @foreach (var currency in Model.Valute.Values)
                         {
                             <tr>
