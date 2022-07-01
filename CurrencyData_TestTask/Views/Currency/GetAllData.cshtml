@@ -31,11 +31,11 @@
             }
             else if(DateTime.Today.Date != Model.Date.Date)
             {
-                <h4 class="pb-2 pt-2">Today is probably a weekend.</h4>
-                <h5>Information showed is on day of @Model.Date.</h5>
-                <br />
-                <tbody>                
-                @foreach (var currency in Model.Valute.Values)
+                    <h4>Market is closed. 
+                        <br />Information showed is on date of @Model.Date.</h4>
+                    <br />
+                    <tbody>                
+                        @foreach (var currency in Model.Valute.Values)
                         {
                             <tr>
                                 <td>
@@ -52,7 +52,7 @@
                                 </td>
                             </tr>
                         }             
-            </tbody>
+                    </tbody>
             }
             else{
                 <h3>On date @Model.Date (@Model.Date.DayOfWeek)</h3> 
